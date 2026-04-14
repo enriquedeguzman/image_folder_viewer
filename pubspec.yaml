@@ -1,0 +1,49 @@
+name: image_folder_viewer
+description: "Gallery, scanner, QR, video, calendar notes, and voice memo app."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.4.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  confetti: ^0.7.0
+  cunning_document_scanner: ^1.2.3
+  file_picker: ^8.1.2
+  image_picker: ^1.1.2
+  just_audio: ^0.9.39
+  mobile_scanner: ^5.2.3
+  open_filex: ^4.4.0
+  path: ^1.9.0
+  path_provider: ^2.1.4
+  pdf: ^3.11.1
+  photo_manager: ^3.2.0
+  record: ^6.0.0
+  share_plus: ^10.0.2
+  shared_preferences: ^2.3.2
+  table_calendar: ^3.1.2
+  video_player: ^2.9.2
+  video_thumbnail: ^0.5.3
+  intl: ^0.20.2
+  firebase_core: ^2.30.0
+  cloud_firestore: ^4.17.5
+  url_launcher: ^6.3.0
+  http: ^1.2.2
+  pdfx: ^2.6.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/details/
+    - assets/master_data/medicine_images/
+    - assets/master_data/pricelist.csv
+    - assets/master_data/pricelist_version.txt

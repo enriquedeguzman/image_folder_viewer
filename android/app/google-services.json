@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "157883940682",
+    "project_id": "medrepsubscription",
+    "storage_bucket": "medrepsubscription.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:157883940682:android:763b24bc87fbba3327cbb3",
+        "android_client_info": {
+          "package_name": "com.enrique.image_folder_viewer"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDE7a7bbme80EeOvyrrQ6naxMBlFb9Jibk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,37 @@
+Resolving dependencies...
+Downloading packages...
+  audio_session 0.1.25 (0.2.2 available)
+  confetti 0.7.0 (0.8.0 available)
+  image 4.5.4 (4.8.0 available)
+  just_audio 0.9.46 (0.10.5 available)
+  meta 1.17.0 (1.18.1 available)
+  mobile_scanner 5.2.3 (7.2.0 available)
+  share_plus 10.1.4 (12.0.1 available)
+  share_plus_platform_interface 5.0.2 (6.1.0 available)
+  win32 5.15.0 (6.0.0 available)
+Got dependencies!
+9 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+Launching lib\main.dart on SM A166P (wireless) in debug mode...
+Running Gradle task 'assembleDebug'...                          
+lib/main.dart:97:19: Error: Not a constant expression.
+      home: const HomeShell(),
+                  ^^^^^^^^^
+Target kernel_snapshot_program failed: Exception
+
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:compileFlutterBuildDebug'.
+> Process 'command 'C:\flutter\bin\flutter.bat'' finished with non-zero exit value 1
+
+* Try:
+> Run with --stacktrace option to get the stack trace.
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights.
+> Get more help at https://help.gradle.org.
+
+BUILD FAILED in 10s
+Running Gradle task 'assembleDebug'...                             11.0s
+Error: Gradle task assembleDebug failed with exit code 1
