@@ -20,5 +20,10 @@
   <string>????</string>
   <key>CFBundleVersion</key>
   <string>1.0</string>
+
+  <!-- 🔥 THIS IS THE FIX -->
+  <key>MinimumOSVersion</key>
+  <string>13.0</string>
+
 </dict>
 </plist>
