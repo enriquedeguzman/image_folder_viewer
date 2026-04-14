@@ -372,7 +372,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.enrique.imagefolderviewer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.enrique.imageFolderViewer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -618,4 +618,3 @@
 	};
 	rootObject = 97C146E61CF9000F007C117D /* Project object */;
 }
-
