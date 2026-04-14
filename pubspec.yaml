@@ -29,8 +29,8 @@ dependencies:
   video_player: ^2.9.2
   video_thumbnail: ^0.5.6
   intl: ^0.20.2
-  firebase_core: ^3.13.0
-  cloud_firestore: ^5.6.8
+  firebase_core: ^2.25.4
+  cloud_firestore: ^4.15.5
   url_launcher: ^6.3.0
   http: ^1.2.2
   pdfx: ^2.6.0
