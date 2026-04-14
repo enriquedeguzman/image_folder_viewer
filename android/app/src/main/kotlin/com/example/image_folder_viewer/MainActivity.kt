@@ -1,4 +1,4 @@
-package com.example.image_folder_viewer
+package com.enrique.image_folder_viewer
 
 import io.flutter.embedding.android.FlutterActivity
 
