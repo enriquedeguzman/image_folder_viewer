@@ -26,7 +26,7 @@ require File.expand_path(File.join('packages', 'flutter_tools', 'bin', 'podhelpe
 flutter_ios_podfile_setup
 
 target 'Runner' do
-  use_frameworks! :linkage => :static   # ✅ IMPORTANT
+
   use_modular_headers!
 
   flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
@@ -44,10 +44,19 @@ post_install do |installer|
       config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
       config.build_settings['CLANG_CXX_LANGUAGE_STANDARD'] = 'c++17'
       config.build_settings['CLANG_CXX_LIBRARY'] = 'libc++'
-      config.build_settings['GCC_PREPROCESSOR_DEFINITIONS'] ||= [
-        '$(inherited)',
-        'GRPC_ALLOW_EXCEPTIONS=1'
-      ]
+
+      ['OTHER_CFLAGS', 'OTHER_CPLUSPLUSFLAGS', 'OTHER_SWIFT_FLAGS'].each do |key|
+        value = config.build_settings[key]
+
+        if value.is_a?(String)
+          value = value.split(' ')
+        end
+
+        if value.is_a?(Array)
+          value = value.reject { |flag| flag == '-G' || flag.start_with?('-G') }
+          config.build_settings[key] = value
+        end
+      end
     end
   end
 end
