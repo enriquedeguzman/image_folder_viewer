@@ -27,25 +27,17 @@ flutter_ios_podfile_setup
 
 target 'Runner' do
   flutter_install_all_ios_pods File.dirname(File.realpath(__FILE__))
+
+  target 'RunnerTests' do
+    inherit! :search_paths
+  end
 end
 
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     flutter_additional_ios_build_settings(target)
-
     target.build_configurations.each do |config|
-      # ✅ FORCE iOS VERSION
       config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '13.0'
-
-      # ❗ REMOVE BAD FLAGS (-G)
-      %w[OTHER_CFLAGS OTHER_CPLUSPLUSFLAGS].each do |key|
-        flags = config.build_settings[key]
-        if flags.is_a?(Array)
-          config.build_settings[key] = flags.reject { |f| f == '-G' }
-        elsif flags.is_a?(String)
-          config.build_settings[key] = flags.split.reject { |f| f == '-G' }.join(' ')
-        end
-      end
     end
   end
 end
