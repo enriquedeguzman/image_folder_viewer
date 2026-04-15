@@ -9,25 +9,30 @@ workflows:
     cache:
       cache_paths: []
     scripts:
-      - name: Flutter clean and upgrade packages
+      - name: Show versions
+        script: |
+          flutter --version
+          ruby --version
+          pod --version
+          xcodebuild -version
+
+      - name: Clean Flutter and iOS state
         script: |
           flutter clean
-          rm -f pubspec.lock
-          rm -f ios/Podfile.lock
-          rm -rf ios/Pods
-          flutter pub upgrade --major-versions
           flutter pub get
 
-      - name: CocoaPods clean install
+      - name: Install pods fresh
         script: |
           cd ios
-          pod repo update
-          pod install --repo-update
+          pod deintegrate || true
+          pod cache clean --all || true
+          rm -rf Pods Podfile.lock
+          pod install --repo-update --verbose
           cd ..
 
-      - name: Build iOS without codesign
+      - name: Build iOS no codesign
         script: |
-          flutter build ios --release --no-codesign
+          flutter build ios --release --no-codesign -v
     artifacts:
       - build/ios/iphoneos/*.app
       - /tmp/xcodebuild_logs/*.log
