@@ -27,12 +27,15 @@ workflows:
           pod deintegrate || true
           pod cache clean --all || true
           rm -rf Pods Podfile.lock
-          pod install --repo-update --verbose
+          pod repo remove trunk || true
+          pod setup
+          pod install --repo-update
           cd ..
 
       - name: Build iOS no codesign
         script: |
           flutter build ios --release --no-codesign -v
+
     artifacts:
       - build/ios/iphoneos/*.app
       - /tmp/xcodebuild_logs/*.log
